@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>To do list</title>
+  </head>
+  <body>
+    <div class="title-app">
+      <h1>BASIC CRUD - TO DO LIST</h1>
+    </div>
+
+    <div class="filter-task">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Introduce the task's title" />
+      <div class="button-group">
+        <button onclick="filterTasks()">Search</button>
+        <button onclick="showAllTasks()">Show all tasks</button>
+        <button onclick="openAddModal()">Add task</button>
+        <button onclick="deleteSelected()">Delete select items</button>
+      </div>
+    </div>
+
+    <div class="content">
+    <div id="taskList"></div>
+        
+    </div>
+
+    <div class="modal" id="taskModal">
+      <div class="modal-content">
+        <h2>Add task</h2>
+        <label for="title"><strong>Title:</strong></label>
+        <input type="text" id="title" required />
+        <br />
+        <label for="description"><strong>Description:</strong></label>
+        <textarea id="description" rows="5" required></textarea>
+        <br />
+        <label for="date"><strong>Date:</strong></label>
+        <input type="date" id="date" required />
+        <br />
+        <div class="button-group">
+          <button id="saveButton" onclick="saveTask()">Save</button>
+          <button id="saveChangesButton" onclick="updateTask()">Saves changes</button>
+          <button id="cancelEditButton" onclick="closeAddModal()"> Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="viewModal">
+        <div class="modal-content">
+          <h2>Task details</h2>
+          <p><strong>Title:</strong> <span id="vTitle"></span></p>
+          <p><strong>Description:</strong> <span id="vDescription"></span></p>
+          <p><strong>Date:</strong> <span id="vDate"></span></p>
+          <button onclick="closeViewModal()">Close</button>
+        </div>
+      </div>
+
+  <script src="script.js"></script>
+</html>
